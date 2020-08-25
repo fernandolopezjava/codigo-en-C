@@ -6,63 +6,41 @@ C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, S
 Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
-#include <stdio.h>
+#include <stdio_ext.h>
+//lopez fernando
+//Pedir al usuario que ingrese 5 sexos ('f' o 'm' (utilizar una estructura repetitiva) . Indicar que sexo se repite mas). Mandar link gdb e incluir consigna y apellido y nombre en un comentario
 
-
-// una linea
-/*
-
-una linea
-otra linea
-
-*/
-
-/*
-
-js->interpretado
-c ->compilado 
-
-
-Entradas y salidas
-
-js->prompt / id.value
-c -> scanf
-
-js -> alert / document.write / console.log / id.value
-c -> printf
-
-
-Tipos de datos:
-
-int -> 4, -8, 1000
-float -> Todos los reales: -9.25, 100.1 , 7/9 , 7, 0, -8
-char -> UN SOLO CARACTER: 'i', '9', '@', '-'
-void -> sin tipo
-double -> flotantes con mayor precision
--------------------
-creados por el programador
--------------------
-No existen:
-Booleanos
-Strings
-
-Mascaras de entrada:
-int -> "%d" // "%i"
-float -> "%f"
-char -> "%c"
-
-*/
-
-int main()//Punto de entrada Entry point
+int main()
 {
-    int numero;
-    float otroNumero;
+     int i;
+     int contadormasculino;
+     int contadorfemenino;
+     char s;
+     
+     contadormasculino=0;
+     contadorfemenino=0;
     
-    numero = 7;
-    otroNumero = 32.954;
-    
-    
-    printf("El numero es: %d y el otro numero es: %f", numero, otroNumero);
+     
+     for(i=0; i<5 ; i++){
+         printf("introdusca el sexo, si es m es masculino y si es f es femenino : ");
+         __fpurge(stdin);
+         scanf("%c" , &s);
+         if(s=='m'){
+             contadormasculino++;
+         }
+         else if(s=='f'){
+             contadorfemenino++;
+         }
+         
+         
+     }
+     
+   if(contadormasculino>contadorfemenino){
+       printf("el sexo que mas se repite es masculino");
+   }
+   else{
+       printf("el sexo que mas se repite es femenino");
+   }
+
     return 0;
 }
-
