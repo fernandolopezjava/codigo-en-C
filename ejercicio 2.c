@@ -10,37 +10,52 @@ Code, Compile, Run and Debug online from anywhere in world.
 //lopez fernando
 //Pedir al usuario que ingrese 5 sexos ('f' o 'm' (utilizar una estructura repetitiva) . Indicar que sexo se repite mas). Mandar link gdb e incluir consigna y apellido y nombre en un comentario
 
+#include <stdio_ext.h>
+
 int main()
 {
-     int i;
-     int contadormasculino;
-     int contadorfemenino;
-     char s;
-     
-     contadormasculino=0;
-     contadorfemenino=0;
+    int i;
+    char sexo;
     
-     
-     for(i=0; i<5 ; i++){
-         printf("introdusca el sexo, si es m es masculino y si es f es femenino : ");
-         __fpurge(stdin);
-         scanf("%c" , &s);
-         if(s=='m'){
-             contadormasculino++;
-         }
-         else if(s=='f'){
-             contadorfemenino++;
-         }
-         
-         
-     }
-     
-   if(contadormasculino>contadorfemenino){
-       printf("el sexo que mas se repite es masculino");
-   }
-   else{
-       printf("el sexo que mas se repite es femenino");
-   }
+    int contadorFemenino;
+    int contadorMasculino;
+    
+    contadorFemenino = 0;
+    contadorMasculino = 0;
+    
+    for(i=0; i<5; i++)
+    {
+        printf("ingrese sexo: ");
+        __fpurge(stdin);//fflush(stdin);// No recomendable: setbuff(NULL...);
+        scanf("%c", &sexo);  
+        
+        if(sexo == 'f')
+        
+        {
+            contadorFemenino++;
+        }
+        else
+        {
+            contadorMasculino++;
+        }
+    }
+    
+    if(contadorMasculino>contadorFemenino)
+    {
+        printf("Se ingresaron mas hombres que mujeres");
+    }
+    else
+    {
+        if(contadorFemenino>contadorMasculino)
+        {
+            printf("Se ingresaron mas mujeres que hombres");
+        }
+        else
+        {
+            printf("Se ingresaron iguales cantidades");
+        }
+    }
 
     return 0;
 }
+
